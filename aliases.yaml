@@ -1,0 +1,8 @@
+default:
+  - 'bower'
+  - 'scripts'
+  - 'bytesize'
+dist:
+  - 'default'
+  - 'uglify'
+  - 'notify:generic'

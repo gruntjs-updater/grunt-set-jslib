@@ -1,0 +1,8 @@
+banner: |
+  /*!
+   * <%= bower.name %> - <%= bower.description %>
+   * v<%= bower.version %>
+   * <%= bower.homepage %>
+   * copyright <%= bower.copyright %> <%= grunt.template.today("yyyy") %>
+   * <%= bower.license %> License
+  */

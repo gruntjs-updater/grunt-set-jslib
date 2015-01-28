@@ -1,0 +1,44 @@
+aliases:
+  - 'jshint:lib'
+  - 'jscs'
+  - 'clean'
+  - 'concat'
+  - 'mocha'
+clean:
+  - '<%= dist %>/*'
+concat:
+  src:
+    - '<%= dev %>/<%= bower.name %>.js'
+  dest: '<%= dist %>/<%= bower.name %>.js'
+concat__full:
+  src:
+    - '<%= dist %>/bower.js'
+    - '<%= dev %>/<%= package.name %>.js'
+  dest: '<%= dist %>/<%= package.name %>.full.js'
+bower:
+  dest: '<%= dist %>/bower.js'
+  additionalDeps: <%= bowerDeps %>
+  exclude:
+    - 'jquery'
+    - 'assert'
+mocha:
+  options:
+    run: true
+    growl: true
+    reporter: 'Spec'
+  all:
+    src: 'test/index.html'
+jscs:
+  src: '<%= jshint.lib %>'
+  options:
+    config: 'node_modules/grunt-set-angular-lib/node_modules/ft-jscs/jscs.json'
+uglify:
+  options:
+    banner: '<%= meta.banner %>'
+  src: '<%= dist %>/<%= package.name %>.js'
+  dest: '<%= dist %>/<%= package.name %>.min.js'
+uglify__full:
+  options:
+    banner: '<%= meta.banner %>'
+  src: '<%= dist %>/<%= package.name %>.full.js'
+  dest: '<%= dist %>/<%= package.name %>.full.min.js'
