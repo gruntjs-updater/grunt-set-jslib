@@ -8,8 +8,8 @@ clean:
   - '<%= dist %>/*'
 concat:
   src:
-    - '<%= dev %>/<%= bower.name %>.js'
-  dest: '<%= dist %>/<%= bower.name %>.js'
+    - '<%= dev %>/<%= package.name %>.js'
+  dest: '<%= dist %>/<%= package.name %>.js'
 concat__full:
   src:
     - '<%= dist %>/bower.js'
@@ -31,7 +31,7 @@ mocha:
 jscs:
   src: '<%= jshint.lib %>'
   options:
-    config: 'node_modules/grunt-set-angular-lib/node_modules/ft-jscs/jscs.json'
+    config: 'node_modules/grunt-set-jslib/node_modules/ft-jscs/jscs.json'
 uglify:
   options:
     banner: '<%= meta.banner %>'
