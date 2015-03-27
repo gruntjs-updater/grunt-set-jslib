@@ -5,4 +5,5 @@ default:
 dist:
   - 'default'
   - 'uglify'
+  - 'clean:scripts_bower'
   - 'notify:generic'

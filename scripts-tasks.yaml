@@ -1,20 +1,22 @@
 aliases:
   - 'jshint:lib'
   - 'jscs'
-  - 'clean'
+  - 'clean:scripts'
   - 'concat'
   - 'mocha'
 clean:
-  - '<%= dist %>/*'
+  - '<%= dist %>/<%= package.name %>*'
+clean__bower:
+  - '<%= dist %>/bower.js'
 concat:
   src:
     - '<%= dev %>/<%= package.name %>.js'
-  dest: '<%= dist %>/<%= package.name %>.js'
+  dest: '<%= dist %>/<%= package.name %>.bower.js'
 concat__full:
   src:
     - '<%= dist %>/bower.js'
     - '<%= dev %>/<%= package.name %>.js'
-  dest: '<%= dist %>/<%= package.name %>.full.js'
+  dest: '<%= dist %>/<%= package.name %>.js'
 bower:
   dest: '<%= dist %>/bower.js'
   additionalDeps: <%= bowerDeps %>
@@ -35,10 +37,10 @@ jscs:
 uglify:
   options:
     banner: '<%= meta.banner %>'
-  src: '<%= dist %>/<%= package.name %>.js'
-  dest: '<%= dist %>/<%= package.name %>.min.js'
+  src: '<%= dist %>/<%= package.name %>.bower.js'
+  dest: '<%= dist %>/<%= package.name %>.bower.min.js'
 uglify__full:
   options:
     banner: '<%= meta.banner %>'
-  src: '<%= dist %>/<%= package.name %>.full.js'
-  dest: '<%= dist %>/<%= package.name %>.full.min.js'
+  src: '<%= dist %>/<%= package.name %>.js'
+  dest: '<%= dist %>/<%= package.name %>.min.js'
