@@ -6,5 +6,5 @@ aliases:
 connect:
   options:
     hostname: '*'
-    livereload: true
+    livereload: <%= livereload %>
     port: 8000

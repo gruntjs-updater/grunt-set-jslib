@@ -1,5 +1,5 @@
 options:
-  livereload: true
+  livereload: <%= livereload %>
 lib:
   files:
     - '<%= jshint.lib %>'
